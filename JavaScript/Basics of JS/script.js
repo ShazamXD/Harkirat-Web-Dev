@@ -52,4 +52,52 @@ let user = { // this is how the object is declared
 
 greet(user); // function called
 
+
+--ARRAY--
+
+let arr = ["chitransh", 21, { 
+    name: "chitransh",
+    age: 21
+    cities: ["delhi", "bangalore", "rishikesh"]    
+}]; 
+// array can contain objects as their elements too and it can go more nested as the key of object can have values in array too
+
+
+const val1 = arr[2];
+
+const val2 = {
+    name: "chitransh",
+    age: 21    
+}
+
+comsole.log(val1);
+console.log(val2); // both will give the same output 
+
+example: 
+
+function solve(user){
+    let ans = [];
+    for(int i=0; i<user.length; i++){
+        if(user[i].age > 18 && user[i].gender == male){
+        ans.push(user[i]);  
+        } 
+    }
+        return ans;    
+}
+
+let user = [{
+    name: harkirat,
+    age: 19,
+    gender: male    
+}, 
+{
+    name: chitransh,
+    age: 18,
+    gender: others    
+}
+];
+
+console.log(solve(user));
+
+
 */
