@@ -15,7 +15,33 @@ EXPENDITURE ANALYSIS
 */
 
 function calculateTotalSpentByCategory(transactions) {
-  return [];
+  const categoryMap = {}; // this is an empty object, will store total for each category
+
+  // loop through each transaction
+  for(let i=0; i<transactions.length; i++){
+    const txn = transactions[i];
+
+    const category = txn.category;
+    const price = txn.price;
+
+    if(categoryMap[category]){ // if category already exists 
+      categoryMap[category]+=price;
+    }
+    else{
+      categoryMap[category] = price; // if not create one 
+    }
+  }
+
+  // convert object to array form 
+  const result =[];
+  for(let category in categoryMap){
+    result.push({
+      category: category,
+      totalSpent: categoryMap[category]
+    });
+  }
+
+  return result;
 }
 
 module.exports = calculateTotalSpentByCategory;
